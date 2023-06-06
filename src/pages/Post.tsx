@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { deletePostById, getPostById } from '../api';
-import { IAdvertisement, IPost } from '../api/types';
+import { IPost } from '../api/types';
 import NotFound from '../components/NotFound';
 import Tag from '../components/Tag';
 
@@ -65,7 +65,7 @@ const Post = () => {
   const [post, setPost] = useState<IPost | null>(null);
 
   const fetchPostById = async () => {
-    const { data } = await getPostById(postId);
+    const { data } = await getPostById(Number(postId));
     const { post } = data;
     setPost(post);
   };
