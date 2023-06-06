@@ -60,12 +60,12 @@ const Text = styled.p`
 `;
 
 const Post = () => {
-  const params = useParams();
-  const { postId } = params;
+  const navigate = useNavigate();
+  const { postId } = useParams() as { postId: string };
   const [post, setPost] = useState<IPost | null>(null);
 
   const fetchPostById = async () => {
-    const { data } = await getPostById(Number(postId));
+    const { data } = await getPostById(postId);
     const { post } = data;
     setPost(post);
   };
@@ -78,7 +78,6 @@ const Post = () => {
     return <NotFound />;
   }
 
-  const navigate = useNavigate();
   const clickDeleteButton = () => {
     const result = window.confirm('정말로 게시글을 삭제하시겠습니까?');
     if (result) {
