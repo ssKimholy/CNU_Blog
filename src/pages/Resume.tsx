@@ -7,7 +7,7 @@ const Resume = () => {
       <h5>
         인지부하 기반 운전자 상태 인식 및 영어 학습 서비스 개발입니다. react를 사용해 FE개발을 맡았고, 실험에도 활용해 한국 hci 학회에 논문을
         투고했습니다.
-      </h5>
+      </h5> 
 
       <h2 style={{ marginTop: 10 }}>Project fair DevDay 동상</h2>
       <h5>2022.11</h5>
